@@ -7,7 +7,7 @@ import astroI18next from "astro-i18next";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://astro-project-starter.pages.dev/',
+  site: 'https://astro-full-starter.pages.dev/',
   integrations: [tailwind({
     applyBaseStyles: false
   }), react(), sitemap({

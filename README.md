@@ -1,5 +1,5 @@
 
-# Astro Project Starter
+# Astro Full Starter
 
 Astro project preconfigured with tailwindcss, tailwind-fluid-typography, react, astro-i18next, astro-seo and astro-robots-txt
 

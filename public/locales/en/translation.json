@@ -1,6 +1,6 @@
 {
     "home": {
-        "title": "Astro Project Starter",
+        "title": "Astro Full Starter",
         "description": "Astro project preconfigured with tailwindcss, tailwind-fluid-typography, react, astro-i18next, astro-seo and astro-robots-txt",
         "content": "Developed and maintained by <0>Coke Posada</0>"
     },
