@@ -1,0 +1,17 @@
+{
+    "home": {
+        "title": "Astro Project Starter",
+        "description": "Astro project preconfigured with tailwindcss, tailwind-fluid-typography, react, astro-i18next, astro-seo and astro-robots-txt",
+        "content": "Developed and maintained by <0>Coke Posada</0>"
+    },
+    "change-language": "Change language",
+    "404": {
+        "title": "Page not found",
+        "description": "The page you are looking for does not exist",
+        "content": {
+            "1": "Page not found",
+            "2": "The page you are looking for does not exist"
+        },
+        "back": "Back to home"
+    }
+}

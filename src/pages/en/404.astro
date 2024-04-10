@@ -1,0 +1,20 @@
+---
+import { t, changeLanguage } from "i18next";
+import Layout from "../../layouts/Layout.astro";
+import { localizePath } from "astro-i18next";
+
+changeLanguage("en");
+---
+
+<Layout title={t("404.title")} description={t("404.description")}>
+  <main>
+    <section class="lg:min-h-[92svh] flex">
+      <div class="container flex flex-col py-20 md:py-40 items-center justify-center gap-6">
+        <p class="fluid-6xl sm:fluid-7xl font-heading font-bold">404</p>
+        <h1 class="text-4xl sm:fluid-5xl font-heading font-medium normal-case">{t("404.content.1")}</h1>
+        <p class="text-center mt-4">{t("404.content.2")}</p>
+        <a href={localizePath("/")}>{t("404.back")}</a>
+      </div>
+    </section>
+  </main>
+</Layout>
