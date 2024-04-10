@@ -8,18 +8,6 @@ export default {
 		fontFamily: {
 			heading: ["Geist Sans", "sans-serif"],
 		},
-		colors: {
-			transparent: 'transparent',
-			current: 'currentColor',
-			black: "#0A0A0A",
-			white: {
-				DEFAULT: "#FFFFE3",
-				30: "rgba(255, 255, 227, 0.3)",
-				50: "rgba(255, 255, 227, 0.5)",
-			},
-			green: "#DAFF3E",
-			pink: "#F28BD4",
-		},
 		container: {
 			center: true,
 		},
