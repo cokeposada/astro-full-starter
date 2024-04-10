@@ -5,10 +5,10 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "npx astro-i18next generate && astro dev",
-    "start": "npx astro-i18next generate && astro dev",
+    "dev": "astro dev",
+    "start": "astro dev",
     "build": "npx astro-i18next generate && astro build",
-    "preview": "npx astro-i18next generate && astro preview",
+    "preview": "astro preview",
     "astro": "astro",
     "trans": "npx astro-i18next generate"
   },
@@ -24,6 +24,7 @@
     "astro-i18next": "^1.0.0-beta.21",
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^0.8.3",
+    "lucide-react": "^0.366.0",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",

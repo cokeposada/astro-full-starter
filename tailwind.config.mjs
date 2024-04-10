@@ -12,7 +12,7 @@ export default {
 			center: true,
 		},
 		fluidTypography: {
-			remSize: 16,
+			remSize: 14,
 			minScreenSize: 320,
 			maxScreenSize: 1920,
 			minTypeScale: 1.2,

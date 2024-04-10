@@ -2,7 +2,33 @@
     "home": {
         "title": "Astro Full Starter",
         "description": "Proyecto de Astro preconfigurado con tailwindcss, tailwind-fluid-typography, react, astro-i18next, astro-seo y astro-robots-txt",
-        "content": "Desarrollado y mantenido por <0>Coke Posada</0>"
+        "content": {
+            "1": {
+                "title": "Soporte multilingüe",
+                "description": "Integración de astro con i18next + algunos componentes de utilidad para ayudarte a traducir tu proyecto Astro."
+            },
+            "2": {
+                "title": "Optimización para motores de búsqueda",
+                "description": "Facilita la adición de etiquetas relevantes para el SEO de sus páginas. Genera automáticamente sitemap.xml y robots.txt para tu proyecto Astro durante la compilación."
+            },
+            "3": {
+                "title": "Componentes React",
+                "description": "Preconfigurado para usar componentes React en tu proyecto Astro. Sólo tienes que importarlos y utilizarlos."
+            },
+            "4": {
+                "title": "TailwindCSS",
+                "description": "Utiliza el poder de Tailwind para mejorar en gran medida tu productividad y mejorar el flujo de trabajo de desarrollo."
+            },
+            "5": {
+                "title": "Tipografía fluída",
+                "description": "Te ofrece un nuevo conjunto de clases que se escalan modularmente en función del tamaño de la pantalla."
+            },
+            "6": {
+                "title": "Puntuaciones Lighthouse",
+                "description": "Construido pensando en el rendimiento, este starter tiene una puntuación perfecta en Lighthouse."
+            }
+        },
+        "footer": "Desarrollado y mantenido por <0>Coke Posada</0>"
     },
     "change-language": "Cambiar idioma",
     "404": {
