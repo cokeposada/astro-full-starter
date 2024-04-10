@@ -7,12 +7,12 @@ import astroI18next from "astro-i18next";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://cokeposada.com',
+  site: 'https://astro-project-starter.pages.dev/',
   integrations: [tailwind({
     applyBaseStyles: false
   }), react(), sitemap({
     i18n: {
-      defaultLocale: "es",
+      defaultLocale: "en",
       locales: {
         es: 'es-ES',
         en: 'en-US',
@@ -21,6 +21,6 @@ export default defineConfig({
   }), robotsTxt(), astroI18next()],
   prefetch: true,
   build: {
-    assets: '_cokeposada',
+    assets: '_astro',
   }
 });
