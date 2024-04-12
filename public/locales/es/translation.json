@@ -1,7 +1,7 @@
 {
     "home": {
         "title": "Astro Full Starter",
-        "description": "Proyecto de Astro preconfigurado con tailwindcss, tailwind-fluid-typography, react, astro-i18next, astro-seo y astro-robots-txt",
+        "description": "Preconfigurado con tailwindcss, tailwind-fluid-typography, react, astro-i18next, astro-seo y astro-robots-txt",
         "content": {
             "1": {
                 "title": "Soporte multilingüe",
