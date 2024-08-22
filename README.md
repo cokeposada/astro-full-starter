@@ -6,9 +6,6 @@ Astro project preconfigured with tailwindcss, tailwind-fluid-typography, react, 
 
 ## Installation
 
-Install dependencies
-_**Note**: Does not support **pnpm**_
-
 ```bash
 npm install
 ```
@@ -21,7 +18,7 @@ Start the server
 npm run dev
 ```
 
-Regenerate English content
+Regenerate translated content
 
 ```bash
 npm run trans
