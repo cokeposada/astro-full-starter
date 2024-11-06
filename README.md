@@ -27,7 +27,14 @@ npm run trans
 ## Deployment
 
 Published in Cloudflare Pages, it only requires a push to the `main` branch.
-- [Guide](https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/)
+- [Git integration]( https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/](https://developers.cloudflare.com/pages/get-started/git-integration/ )
+- [CLI]( https://developers.cloudflare.com/pages/get-started/c3/ )
+
+Important: Cloudflare currently builds by default using Node 18, if you have problems publishing the project, or you are using a higher version (like me), you can specify it as a variable in the configuration, as follows:
+
+| Type | Name     | Value                       |
+| :-------- | :------- | :-------------------------------- |
+| `Plaintext`      | `NODE_VERSION` | 20.18.0 |
 
 ## Build
 
