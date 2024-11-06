@@ -2,7 +2,7 @@
   "name": "astro-full-starter",
   "description": "Astro project preconfigured with tailwindcss, tailwind-fluid-typography, react, astro-i18next, astro-seo and astro-robots-txt",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "scripts": {
     "dev": "astro dev",
@@ -13,14 +13,14 @@
     "trans": "npx astro-i18next generate"
   },
   "dependencies": {
-    "@astrojs/react": "^3.1.0",
-    "@astrojs/sitemap": "^3.1.2",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/sitemap": "^3.2.0",
+    "@astrojs/tailwind": "^5.1.1",
     "@fontsource/geist-mono": "^5.0.2",
     "@fontsource/roboto": "^5.0.12",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
-    "astro": "^4.5.0",
+    "astro": "^4.15.11",
     "astro-i18next": "^1.0.0-beta.21",
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^0.8.3",

@@ -22,5 +22,12 @@ export default defineConfig({
   prefetch: true,
   build: {
     assets: '_astro',
+  },
+  vite: {
+    server: {
+      watch: {
+        usePolling: true
+      }
+    }
   }
 });
