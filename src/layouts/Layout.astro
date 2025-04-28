@@ -1,121 +1,53 @@
 ---
 interface Props {
-  title: string;
-  description: string;
+	title: string
+	description: string
 }
 
-const { title, description } = Astro.props;
-import '@fontsource/geist-mono';
-import { ViewTransitions } from "astro:transitions";
-import { SEO } from "astro-seo";
-import i18next from "i18next";
-import { HeadHrefLangs } from "astro-i18next/components";
+const { title, description } = Astro.props
+import '@fontsource/geist-mono'
+import '@/styles/global.css'
+import { ClientRouter } from 'astro:transitions'
+import { SEO } from 'astro-seo'
+import { getLangFromUrl } from '@/i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
 ---
 
 <!doctype html>
-<html lang={i18next.language}>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <SEO
-      title={title}
-      titleTemplate="%s :: Coke Posada"
-      description={description}
-      canonical={Astro.url.toString()}
-      openGraph={{
-        basic: {
-          title: "Astro Full Starter",
-          type: "website",
-          image: "https://astro-full-starter.pages.dev/og-image.jpg",
-        },
-        image: {
-          alt: "Astro Full Starter by Coke Posada",
-        },
-        optional:{
-          description: description,
-        }
-      }}
-      twitter={{
-        creator: "@cokeposada",
-      }}
-    />
-    <HeadHrefLangs />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <ViewTransitions />
-  </head>
-  <body>
-
-    <slot />
-
-    <style is:global>
-      @tailwind base;
-      @tailwind components;
-      @tailwind utilities;
-
-      @font-face {
-        font-family: "Geist Sans";
-        src: url("/fonts/geist-sans-latin-500-normal.woff2") format("woff2");
-        font-weight: 500;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      @font-face {
-        font-family: "Geist Sans";
-        src: url("/fonts/geist-sans-latin-900-normal.woff2") format("woff2");
-        font-weight: 900;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      @layer base {
-        html {
-          font-family: "Geist Mono", monospace;
-          @apply scroll-smooth uppercase;
-        }
-
-        body {
-          @apply antialiased fluid-base;
-        }
-
-        * {
-          @apply focus-visible:ring focus:outline-none;
-        }
-
-        .container {
-          width: 93% !important;
-          max-width: unset !important;
-          @apply px-4 md:px-10;
-        }
-      }
-    </style>
-
-    <script>
-      function hasHash() {
-        // Verifica si en la URL hay un hash y si existe un elemento con ese ID
-        if (
-          window.location.hash &&
-          document.getElementById(window.location.hash.substring(1))
-        ) {
-          // Obtiene el ID del hash
-          const hash = window.location.hash.substring(1);
-          // Obtiene el elemento con el ID del hash
-          const element = document.getElementById(hash);
-          // Obtiene la posición del elemento
-          const y = element.getBoundingClientRect().top + window.scrollY;
-          // Realiza el scroll al elemento
-          window.scrollTo({ top: y, behavior: "smooth" });
-        }
-      }
-
-      document.addEventListener("DOMContentLoaded", () => {
-        hasHash();
-      });
-
-      document.addEventListener("astro:after-swap", () => {
-        hasHash();
-      });
-    </script>
-  </body>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<SEO
+			title={title}
+			titleTemplate="%s :: Coke Posada"
+			description={description}
+			canonical={Astro.url.toString()}
+			openGraph={{
+				basic: {
+					title: 'Astro Full Starter',
+					type: 'website',
+					image: 'https://astro-full-starter.pages.dev/og-image.jpg'
+				},
+				image: {
+					alt: 'Astro Full Starter by Coke Posada'
+				},
+				optional: {
+					description: description
+				}
+			}}
+			twitter={{
+				creator: '@cokeposada'
+			}}
+		/>
+		<link rel="alternate" href={`${Astro.site}en/`} hreflang="en" />
+		<link rel="alternate" href={`${Astro.site}es/`} hreflang="es" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<ClientRouter />
+	</head>
+	<body>
+		<slot />
+	</body>
 </html>

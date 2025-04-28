@@ -1,51 +1,76 @@
-
 # Astro Full Starter
 
-Astro project preconfigured with tailwindcss, tailwind-fluid-typography, react, astro-i18next, astro-seo and astro-robots-txt
+A base Astro project to start building your website quickly and efficiently.
 
+## 🚀 Installation
 
-## Installation
+1. Clone this repository:
 
-```bash
-npm install
+   ```bash
+   git clone https://github.com/your-username/astro-full-starter.git
+   cd astro-full-starter
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   pnpm dev
+   ```
+
+4. Open your browser at `http://localhost:4321`
+
+## 📦 Commands
+
+| Command           | Action                         |
+| :---------------- | :----------------------------- |
+| `npm run dev`     | Start local development server |
+| `npm run build`   | Build site for production      |
+| `npm run preview` | Preview production build       |
+| `npm run astro`   | Run Astro CLI commands         |
+
+## 🧩 Frameworks and Libraries
+
+This project includes the following technologies:
+
+- [Astro](https://astro.build/) - Web framework for content-focused websites
+- [React](https://reactjs.org/) - JavaScript library for building user interfaces
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Lucide React](https://lucide.dev/) - Icon set
+- [Astro SEO](https://github.com/jonasmerlin/astro-seo) - Component for managing SEO
+- i18n Support - Multi-language internationalization (EN/ES)
+
+## 📁 Project Structure
+
 ```
-    
-## Run Locally
-
-Start the server
-
-```bash
-npm run dev
+/
+├── public/             # Static assets
+├── src/
+│   ├── assets/         # Images and files
+│   ├── components/     # Reusable components
+│   ├── i18n/           # Internationalization files
+│   ├── layouts/        # Page templates
+│   ├── pages/          # Site pages
+│   └── styles/         # Global styles
+├── astro.config.mjs    # Astro configuration
+├── tailwind.config.js  # Tailwind CSS configuration
+└── tsconfig.json       # TypeScript configuration
 ```
 
-Regenerate translated content
+## 🌐 Internationalization
 
-```bash
-npm run trans
-```
+The project is configured to support multiple languages:
 
-## Deployment
+- English (default)
+- Spanish
 
-Published in Cloudflare Pages, it only requires a push to the `main` branch.
-- [Git integration]( https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/](https://developers.cloudflare.com/pages/get-started/git-integration/ )
-- [CLI]( https://developers.cloudflare.com/pages/get-started/c3/ )
+The i18n configuration can be found in `astro.config.mjs`.
 
-Important: Cloudflare currently builds by default using Node 18, if you have problems publishing the project, or you are using a higher version (like me), you can specify it as a variable in the configuration, as follows:
+## 📄 License
 
-| Type | Name     | Value                       |
-| :-------- | :------- | :-------------------------------- |
-| `Plaintext`      | `NODE_VERSION` | 20.18.0 |
-
-## Build
-
-```bash
-npm run build
-```
-    
-## Authors
-
-- [@cokeposada](https://github.com/cokeposada)
-
-## License
-
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+MIT - See the [LICENSE](LICENSE) file for details.

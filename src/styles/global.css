@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-heading: 'Geist Sans', 'sans-serif';
+}
+
+@font-face {
+	font-family: 'Geist Sans';
+	src: url('/fonts/geist-sans-latin-500-normal.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Geist Sans';
+	src: url('/fonts/geist-sans-latin-900-normal.woff2') format('woff2');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@layer base {
+	html {
+		font-family: 'Geist Mono', monospace;
+		@apply scroll-smooth uppercase;
+	}
+
+	body {
+		@apply text-sm antialiased;
+	}
+
+	* {
+		@apply focus:outline-none focus-visible:ring;
+	}
+
+	.container {
+		width: 93% !important;
+		max-width: unset !important;
+		@apply mx-auto px-4 md:px-10;
+	}
+}

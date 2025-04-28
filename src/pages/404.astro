@@ -1,20 +1,22 @@
 ---
-import { t, changeLanguage } from "i18next";
-import Layout from "../layouts/Layout.astro";
-import { localizePath } from "astro-i18next";
+import Layout from '@/layouts/Layout.astro'
+import { getLangFromUrl, useTranslations, getTranslatedPath } from '@/i18n/utils'
 
-changeLanguage("en");
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
-<Layout title={t("404.title")} description={t("404.description")}>
-  <main>
-    <section class="lg:min-h-[92svh] flex">
-      <div class="container flex flex-col py-20 md:py-40 items-center justify-center gap-6">
-        <p class="fluid-6xl sm:fluid-7xl font-heading font-bold">404</p>
-        <h1 class="text-4xl sm:fluid-5xl font-heading font-medium normal-case">{t("404.content.1")}</h1>
-        <p class="text-center mt-4">{t("404.content.2")}</p>
-        <a href={localizePath("/")}>{t("404.back")}</a>
-      </div>
-    </section>
-  </main>
+<Layout title={t('404.title')} description={t('404.description')}>
+	<main>
+		<section class="flex lg:min-h-[92svh]">
+			<div class="container flex flex-col items-center justify-center gap-6 py-20 md:py-40">
+				<p class="font-heading text-6xl font-bold">404</p>
+				<h1 class="font-heading text-4xl font-medium">
+					{t('404.content.1')}
+				</h1>
+				<p class="mt-4 text-center">{t('404.content.2')}</p>
+				<a href={getTranslatedPath('/', lang)}>{t('404.back')}</a>
+			</div>
+		</section>
+	</main>
 </Layout>
