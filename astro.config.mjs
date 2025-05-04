@@ -16,7 +16,15 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
-  integrations: [react(), sitemap(), robotsTxt()],
+  integrations: [react(), sitemap({
+    i18n: {
+      defaultLocale: 'en',
+      locales: {
+        en: 'en-US',
+        es: 'es-ES'
+      }
+    }
+  }), robotsTxt()],
   vite: {
     plugins: [tailwindcss()],
     server: {
