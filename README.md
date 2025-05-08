@@ -38,11 +38,11 @@ A base Astro project to start building your website quickly and efficiently.
 
 This project includes the following technologies:
 
-- [Astro v5.7.5](https://astro.build/) - Web framework for content-focused websites
-- [React v18.2.0](https://reactjs.org/) - JavaScript library for building user interfaces
-- [Tailwind CSS v4.1.4](https://tailwindcss.com/) - Utility-first CSS framework
-- [Lucide React v0.366.0](https://lucide.dev/) - Icon set
-- [Astro SEO v0.8.3](https://github.com/jonasmerlin/astro-seo) - Component for managing SEO
+- [Astro v5.7.11](https://astro.build/) - Web framework for content-focused websites
+- [React v19.1.0](https://reactjs.org/) - JavaScript library for building user interfaces
+- [Tailwind CSS v4.1.5](https://tailwindcss.com/) - Utility-first CSS framework
+- [Lucide React v0.508.0](https://lucide.dev/) - Icon set
+- [Astro SEO v0.8.4](https://github.com/jonasmerlin/astro-seo) - Component for managing SEO
 - [Astro Sitemap v3.3.1](https://docs.astro.build/en/guides/integrations-guide/sitemap/) - Automatic sitemap generation
 - [Astro Robots.txt v1.0.0](https://github.com/alextim/astro-lib/tree/main/packages/astro-robots-txt) - Robots.txt generation
 - i18n Support - Multi-language internationalization (EN/ES)
