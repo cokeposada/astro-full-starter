@@ -2,7 +2,7 @@
   "name": "astro-full-starter",
   "description": "Astro project to start building your website ASAP.",
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "scripts": {
     "dev": "astro dev",
@@ -11,26 +11,21 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^4.2.5",
+    "@astrojs/react": "^4.2.7",
     "@astrojs/sitemap": "^3.3.1",
-    "@fontsource/geist-mono": "^5.0.2",
-    "@fontsource/roboto": "^5.0.12",
-    "@tailwindcss/vite": "^4.1.4",
-    "@types/react": "^18.2.64",
-    "@types/react-dom": "^18.2.21",
-    "astro": "^5.7.5",
+    "@tailwindcss/vite": "^4.1.5",
+    "@fontsource/geist-mono": "^5.2.6",
+    "@fontsource/roboto": "^5.2.5",
+    "astro": "^5.7.11",
     "astro-robots-txt": "^1.0.0",
-    "astro-seo": "^0.8.3",
-    "iso-639-1": "^3.1.0",
-    "locale-emoji": "^0.3.0",
-    "lucide-react": "^0.366.0",
-    "react": "^18.2.0",
-    "react-device-detect": "^2.2.3",
-    "react-dom": "^18.2.0",
-    "tailwindcss": "^4.1.4"
+    "astro-seo": "^0.8.4",
+    "lucide-react": "^0.508.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.5"
   },
   "devDependencies": {
-    "prettier": "^3.3.3",
+    "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "sharp": "^0.34.1"
