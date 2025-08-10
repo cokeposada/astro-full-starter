@@ -2,38 +2,6 @@
 
 A base Astro project to start building your website quickly and efficiently.
 
-## 🚀 Installation
-
-1. Clone this repository:
-
-   ```bash
-   git clone https://github.com/your-username/astro-full-starter.git
-   cd astro-full-starter
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   pnpm install
-   ```
-
-3. Start the development server:
-
-   ```bash
-   pnpm dev
-   ```
-
-4. Open your browser at `http://localhost:4321`
-
-## 📦 Commands
-
-| Command        | Action                         |
-| :------------- | :----------------------------- |
-| `pnpm dev`     | Start local development server |
-| `pnpm build`   | Build site for production      |
-| `pnpm preview` | Preview production build       |
-| `pnpm astro`   | Run Astro CLI commands         |
-
 ## 🧩 Frameworks and Libraries
 
 This project includes the following technologies:
@@ -90,6 +58,38 @@ The i18n configuration can be found in `astro.config.mjs` and uses Astro's built
 - **TypeScript**: Type safety throughout the project
 - **React Components**: Seamless integration with React
 - **Modern Styling**: Tailwind CSS v4 for fast and consistent design
+
+## 🚀 Installation
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/your-username/astro-full-starter.git
+   cd astro-full-starter
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   pnpm dev
+   ```
+
+4. Open your browser at `http://localhost:4321`
+
+## 📦 Commands
+
+| Command        | Action                         |
+| :------------- | :----------------------------- |
+| `pnpm dev`     | Start local development server |
+| `pnpm build`   | Build site for production      |
+| `pnpm preview` | Preview production build       |
+| `pnpm astro`   | Run Astro CLI commands         |
 
 ## 📄 License
 
