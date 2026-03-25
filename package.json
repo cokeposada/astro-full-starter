@@ -11,23 +11,23 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^4.3.0",
-    "@astrojs/sitemap": "^3.4.2",
-    "@fontsource/geist-mono": "^5.2.6",
-    "@fontsource/roboto": "^5.2.5",
-    "@tailwindcss/vite": "^4.1.5",
-    "astro": "^5.12.6",
+    "@astrojs/react": "^5.0.1",
+    "@astrojs/sitemap": "^3.7.1",
+    "@fontsource/geist-mono": "^5.2.7",
+    "@fontsource/roboto": "^5.2.10",
+    "@tailwindcss/vite": "^4.2.2",
+    "astro": "^6.0.8",
     "astro-robots-txt": "^1.0.0",
-    "astro-seo": "^0.8.4",
-    "lucide-react": "^0.508.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.5"
+    "astro-seo": "^1.1.0",
+    "lucide-react": "^1.6.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
-    "prettier": "^3.5.3",
+    "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.11",
-    "sharp": "^0.34.1"
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "sharp": "^0.34.5"
   }
 }
