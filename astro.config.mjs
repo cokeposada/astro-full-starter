@@ -4,7 +4,6 @@ import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
 import tailwindcss from '@tailwindcss/vite'
 import sitemap from '@astrojs/sitemap'
-import robotsTxt from 'astro-robots-txt'
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,8 +27,7 @@ export default defineConfig({
 					es: 'es-ES'
 				}
 			}
-		}),
-		robotsTxt()
+		})
 	],
 	vite: {
 		plugins: [tailwindcss()],

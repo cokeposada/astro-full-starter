@@ -2,7 +2,7 @@
 	"name": "astro-full-starter",
 	"description": "Astro project to start building your website ASAP.",
 	"type": "module",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"license": "MIT",
 	"scripts": {
 		"dev": "astro dev",
@@ -19,26 +19,23 @@
 		"@astrojs/react": "^7.1.2",
 		"@astrojs/sitemap": "^3.7.4",
 		"@fontsource/geist-mono": "^5.3.0",
-		"@fontsource/roboto": "^5.3.0",
 		"@tailwindcss/vite": "^4.3.4",
 		"astro": "^7.4.5",
-		"astro-robots-txt": "^1.0.0",
-		"astro-seo": "^1.2.0",
 		"lucide-react": "^1.67.0",
 		"react": "^19.3.1",
 		"react-dom": "^19.3.1",
 		"tailwindcss": "^4.3.4"
 	},
 	"devDependencies": {
+		"@astrojs/check": "^0.9.12",
+		"@playwright/test": "^1.64.1",
+		"@types/react": "^19.3.0",
+		"@types/react-dom": "^19.3.0",
 		"prettier": "^3.9.10",
 		"prettier-plugin-astro": "^1.1.2",
 		"prettier-plugin-tailwindcss": "^0.8.1",
 		"sharp": "^0.35.5",
-		"typescript": "~6.0.3",
-		"@astrojs/check": "^0.9.12",
-		"@types/react": "^19.3.0",
-		"@types/react-dom": "^19.3.0",
-		"@playwright/test": "^1.64.1"
+		"typescript": "~6.0.3"
 	},
 	"engines": {
 		"node": ">=22.23.4"

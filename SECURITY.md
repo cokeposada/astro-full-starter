@@ -1,5 +1,9 @@
 # Dependency security notes
 
+## Current remediation
+
+The native static endpoint at `src/pages/robots.txt.ts` replaces `astro-robots-txt` and removes its Zod 3 dependency. It preserves the robots directives and derives the sitemap URL from Astro's `site` configuration. No Zod version override is required. The exception below applies only to the published v2.0.0 dependency tree.
+
 ## v2.0.0 audit — 2026-11-03
 
 Compatible transitive updates resolve the reported `fast-uri` and `source-map-js` advisories and update the sitemap integration's Zod dependency.

@@ -25,7 +25,7 @@ Open `http://localhost:4321`. English lives at `/`; Spanish lives at `/es/`.
 - Astro 7 with static output and `ClientRouter` navigation
 - React 19 and Lucide React icons
 - Tailwind CSS 4 through its Vite plugin
-- `astro-seo`, `@astrojs/sitemap`, and `astro-robots-txt`
+- Native Astro SEO metadata, `@astrojs/sitemap`, and a native static endpoint for `robots.txt`
 - Local Geist Sans files and self-hosted Geist Mono from Fontsource
 - TypeScript 6, Astro Check, Prettier, Node tests, and Playwright
 

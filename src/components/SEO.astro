@@ -1,0 +1,24 @@
+---
+interface Props {
+	title: string
+	description: string
+	canonical: string
+	noindex?: boolean
+}
+
+const { title, description, canonical, noindex = false } = Astro.props
+const image = new URL('/og-image.jpg', Astro.site).href
+---
+
+<title>{title} :: Coke Posada</title>
+<link rel="canonical" href={canonical} />
+<meta name="description" content={description} />
+<meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
+<meta property="og:title" content={title} />
+<meta property="og:type" content="website" />
+<meta property="og:image" content={image} />
+<meta property="og:url" content={canonical} />
+<meta property="og:description" content={description} />
+<meta property="og:image:url" content={image} />
+<meta property="og:image:alt" content="Astro Full Starter by Coke Posada" />
+<meta name="twitter:creator" content="@cokeposada" />

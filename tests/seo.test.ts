@@ -34,5 +34,21 @@ for (const file of ['404.html', 'es/404/index.html']) {
 }
 test('sitemap excludes errors and robots references the sitemap', () => {
 	assert.ok(!read('sitemap-0.xml').includes('/404'))
-	assert.ok(read('robots.txt').includes('https://astro-full-starter.pages.dev/sitemap-index.xml'))
+	assert.ok(!read('sitemap-0.xml').includes('/robots.txt'))
+	assert.equal(
+		read('robots.txt'),
+		'User-agent: *\nAllow: /\nSitemap: https://astro-full-starter.pages.dev/sitemap-index.xml\n'
+	)
 })
+
+const expectedTags = JSON.parse(
+	readFileSync(new URL('./fixtures/seo-tags.json', import.meta.url), 'utf8')
+) as Record<string, string[]>
+for (const [file, tags] of Object.entries(expectedTags)) {
+	test(`${file} preserves the complete SEO metadata contract`, () => {
+		const actual = read(file).match(
+			/<title>.*?<\/title>|<meta[^>]*>|<link[^>]*(?:canonical|alternate)[^>]*>/g
+		)
+		assert.deepEqual(actual, tags)
+	})
+}
