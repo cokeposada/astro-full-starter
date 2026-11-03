@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.0.1 — 2026-11-03
+
+### Changed
+
+- Replace `astro-seo` with a typed native Astro component, preserving metadata on both homepages and error pages.
+- Remove the unused Roboto font package; retain existing Geist fonts and all other integrations.
+
+### Security
+
+- Replace `astro-robots-txt` with a native, prerendered Astro endpoint, removing its vulnerable Zod 3 dependency without overriding incompatible APIs.
+- Preserve the existing robots directives and derive the sitemap URL from the configured `site`.
+
 ## 2.0.0 — 2026-11-03
 
 ### Breaking changes
