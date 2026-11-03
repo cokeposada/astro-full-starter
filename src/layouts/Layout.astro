@@ -2,16 +2,21 @@
 interface Props {
 	title: string
 	description: string
+	noindex?: boolean
 }
 
-const { title, description } = Astro.props
+const { title, description, noindex = false } = Astro.props
 import '@fontsource/geist-mono'
 import '@/styles/global.css'
 import { ClientRouter } from 'astro:transitions'
 import { SEO } from 'astro-seo'
-import { getLangFromUrl } from '@/i18n/utils'
+import { getLangFromUrl, getTranslatedPath } from '@/i18n/utils'
 
 const lang = getLangFromUrl(Astro.url)
+const site = Astro.site!
+const canonical = new URL(Astro.url.pathname, site).href
+const alternate = (locale: 'en' | 'es') =>
+	new URL(getTranslatedPath(Astro.url.pathname, locale), site).href
 ---
 
 <!doctype html>
@@ -23,12 +28,13 @@ const lang = getLangFromUrl(Astro.url)
 			title={title}
 			titleTemplate="%s :: Coke Posada"
 			description={description}
-			canonical={Astro.url.toString()}
+			canonical={canonical}
+			noindex={noindex}
 			openGraph={{
 				basic: {
-					title: 'Astro Full Starter',
+					title,
 					type: 'website',
-					image: 'https://astro-full-starter.pages.dev/og-image.jpg'
+					image: new URL('/og-image.jpg', site).href
 				},
 				image: {
 					alt: 'Astro Full Starter by Coke Posada'
@@ -41,8 +47,13 @@ const lang = getLangFromUrl(Astro.url)
 				creator: '@cokeposada'
 			}}
 		/>
-		<link rel="alternate" href={`${Astro.site}en/`} hreflang="en" />
-		<link rel="alternate" href={`${Astro.site}es/`} hreflang="es" />
+		{!noindex && (
+			<>
+				<link rel="alternate" href={alternate('en')} hreflang="en" />
+				<link rel="alternate" href={alternate('es')} hreflang="es" />
+				<link rel="alternate" href={alternate('en')} hreflang="x-default" />
+			</>
+		)}
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 		<ClientRouter />

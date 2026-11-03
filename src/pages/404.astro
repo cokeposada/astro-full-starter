@@ -6,14 +6,12 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<Layout title={t('404.title')} description={t('404.description')}>
+<Layout noindex title={t('404.title')} description={t('404.description')}>
 	<main>
 		<section class="flex lg:min-h-[92svh]">
 			<div class="container flex flex-col items-center justify-center gap-6 py-20 md:py-40">
 				<p class="font-heading text-6xl font-bold">404</p>
-				<h1 class="font-heading text-4xl font-medium">
-					{t('404.content.1')}
-				</h1>
+				<h1 class="font-heading text-4xl font-medium">{t('404.content.1')}</h1>
 				<p class="mt-4 text-center">{t('404.content.2')}</p>
 				<a href={getTranslatedPath('/', lang)}>{t('404.back')}</a>
 			</div>
