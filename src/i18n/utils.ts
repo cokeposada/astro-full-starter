@@ -1,33 +1,33 @@
-import { ui, defaultLang } from './ui'
+import { ui, defaultLang, languages } from './ui.ts'
 
-export function getLangFromUrl(url: URL) {
-	const [, lang] = url.pathname.split('/')
-	if (lang in ui) return lang as keyof typeof ui
-	return defaultLang
+export type Locale = keyof typeof languages
+
+export function getLangFromUrl(url: URL): Locale {
+	const lang = url.pathname.split('/')[1]
+	return Object.hasOwn(languages, lang) ? (lang as Locale) : defaultLang
 }
 
-export function useTranslations(lang: keyof typeof ui) {
-	return function t(key: string) {
-		return getNestedValue(ui[lang], key) || getNestedValue(ui[defaultLang], key)
+export function useTranslations(lang: Locale) {
+	return function t(key: string): string {
+		return getNestedValue(ui[lang], key) ?? getNestedValue(ui[defaultLang], key) ?? key
 	}
 }
 
-// Obtiene un valor anidado de un objeto usando una ruta como 'home.content.1.title'
-function getNestedValue(obj: any, path: string) {
-	return path.split('.').reduce((prev, curr) => {
-		return prev ? prev[curr] : null
-	}, obj)
+function getNestedValue(obj: unknown, path: string): string | undefined {
+	let value = obj
+	for (const key of path.split('.')) {
+		if (typeof value !== 'object' || value === null || !Object.hasOwn(value, key)) return undefined
+		value = (value as Record<string, unknown>)[key]
+	}
+	return typeof value === 'string' ? value : undefined
 }
 
-export function getTranslatedPath(path: string, lang: string) {
-	const pathWithoutLeadingSlash = path.startsWith('/') ? path.slice(1) : path
-
-	// Si estamos en la ruta raíz
-	if (pathWithoutLeadingSlash === '') {
-		if (lang === defaultLang) return '/'
-		return `/${lang}/`
-	}
-
-	if (lang === defaultLang) return `/${pathWithoutLeadingSlash}`
-	return `/${lang}/${pathWithoutLeadingSlash}`
+export function getTranslatedPath(path: string, lang: Locale): string {
+	const suffixIndex = path.search(/[?#]/)
+	const pathname = suffixIndex < 0 ? path : path.slice(0, suffixIndex)
+	const suffix = suffixIndex < 0 ? '' : path.slice(suffixIndex)
+	const segments = pathname.replace(/^\/+/, '').split('/')
+	if (Object.hasOwn(languages, segments[0])) segments.shift()
+	const unprefixed = '/' + segments.join('/')
+	return (lang === defaultLang ? unprefixed : `/${lang}${unprefixed}`) + suffix
 }
