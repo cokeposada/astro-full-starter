@@ -2,7 +2,7 @@
 	"name": "astro-full-starter",
 	"description": "Astro project to start building your website ASAP.",
 	"type": "module",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"license": "MIT",
 	"scripts": {
 		"dev": "astro dev",

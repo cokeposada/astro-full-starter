@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.0.2 — 2026-11-03
+
+### Fixed
+
+- Make SEO and sitemap checks follow the configured domain and current translations instead of demo branding snapshots.
+- Remove fixed font, icon-count, content, and preview-origin assumptions from browser tests; check actual image decoding and font loading errors.
+- Verify generated Open Graph images are accessible and add a high/critical dependency audit to CI.
+- Remove the README instruction to edit test fixtures after customization.
+
 ## 2.0.1 — 2026-11-03
 
 ### Changed

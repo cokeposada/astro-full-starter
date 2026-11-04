@@ -76,10 +76,10 @@ pnpm build
 pnpm test
 pnpm exec playwright install chromium
 pnpm test:e2e
-pnpm audit
+pnpm audit --audit-level high
 ```
 
-CI runs installation, type, format, build, and test checks on pull requests and pushes to `main`; run the dependency audit separately. Only `esbuild` and `sharp` dependency build scripts are permitted explicitly.
+CI runs installation, dependency audit (high/critical), type, format, build, and test checks on pull requests and pushes to `main`. Only `esbuild` and `sharp` dependency build scripts are permitted explicitly.
 
 ## Customize your site
 
@@ -115,7 +115,7 @@ Pass each page's `title` and `description` to the shared layout:
 - Add `noindex` to `<Layout>` to prevent indexing and omit language alternates. For additional pages, also update the sitemap `filter` in `astro.config.mjs`; only the bundled 404 pages are excluded automatically.
 - Edit the response text in `src/pages/robots.txt.ts` to change crawler directives, such as adding `Disallow: /private/`. Keep the generated `Sitemap` line. The endpoint builds into `dist/robots.txt`; do not also create `public/robots.txt`. Robots rules control crawling, not access or guaranteed removal from search results.
 
-After customization, run `pnpm build` and inspect `dist/`. Update the expected domain and metadata in `tests/seo.test.ts` and `tests/fixtures/seo-tags.json` to match your site before running `pnpm test`.
+After customization, run `pnpm build` and inspect `dist/`. Run `pnpm test` and `pnpm test:e2e`; checks use your configured site and translations, so changing branding does not require editing test fixtures.
 
 ## Deployment
 
