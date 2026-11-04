@@ -38,10 +38,10 @@ The exact installed versions are recorded in `pnpm-lock.yaml`.
 public/                   # Favicon, Open Graph image, local fonts
 src/
   assets/                 # Imported images and logo
-  components/             # Language selector
+  components/             # Language selector and SEO.astro
   i18n/                   # Translation dictionaries and route helpers
-  layouts/                # Shared HTML and SEO metadata
-  pages/                  # English pages and Spanish pages under es/
+  layouts/                # Shared HTML and language alternates
+  pages/                  # English/Spanish pages and robots.txt.ts
   styles/global.css       # Tailwind import, theme, fonts, and base styles
 tests/                    # Route and generated-output tests
   e2e/                    # Desktop and mobile browser tests
@@ -79,18 +79,43 @@ pnpm test:e2e
 pnpm audit
 ```
 
-CI runs the same checks, including browser tests, on pull requests and pushes to `main`. Only `esbuild` and `sharp` dependency build scripts are permitted explicitly.
+CI runs installation, type, format, build, and test checks on pull requests and pushes to `main`; run the dependency audit separately. Only `esbuild` and `sharp` dependency build scripts are permitted explicitly.
 
 ## Customize your site
 
-1. Set `site` in `astro.config.mjs` to your production origin. Canonical URLs, alternate-language URLs, sitemap entries, robots.txt, and the Open Graph image URL derive from it.
-2. Replace `public/og-image.jpg`, the favicon, logo, author links, and the title template and Twitter creator in the shared layout.
-3. Edit translations in `src/i18n/ui.ts`. Keep the English and Spanish dictionary structures aligned.
-4. Add corresponding routes under `src/pages/` and `src/pages/es/`. Both languages use the same unprefixed path; translated slugs and partially translated route trees require an explicit route mapping.
-5. Pass a page-specific `title` and `description` to `Layout`. Pass `noindex` for pages that must not be indexed; those pages omit language alternates. Both bundled 404 pages are also excluded from the sitemap.
-6. Edit `src/styles/global.css` for typography and Tailwind theme values.
+- Set `site` in `astro.config.mjs` to your production origin; canonical, alternate-language, sitemap, robots, and Open Graph image URLs derive from it.
+- Replace the favicon, `public/og-image.jpg`, logo, and author links.
+- Edit `src/i18n/ui.ts` and add matching routes under `src/pages/` and `src/pages/es/`. Keep dictionary structures and unprefixed paths aligned; translated slugs need an explicit route mapping. The selector preserves query strings and fragments.
 
-The language selector preserves the current query string and fragment. Route normalization removes only a recognized leading locale segment, so paths such as `/enterprise/` and `/especial/` remain intact. Missing translation keys fall back to English and then to the key itself.
+### Fonts with Fontsource
+
+Install any [Fontsource family](https://fontsource.org/), for example `pnpm add @fontsource/inter`. In `src/layouts/Layout.astro`, replace the Geist Mono import with the weights you need:
+
+```ts
+import '@fontsource/inter/400.css'
+import '@fontsource/inter/500.css'
+import '@fontsource/inter/700.css'
+```
+
+In `src/styles/global.css`, set `html`'s `font-family` to `'Inter', sans-serif` for body text and `--font-heading` to `'Inter', sans-serif` for headings. You can use different families for each; import every weight your styles request.
+
+If replacing both Geist families, remove their unused `@font-face` rules and files from `public/fonts/`, then run `pnpm remove @fontsource/geist-mono`. Fonts remain self-hosted; no Astro Fonts API configuration is required.
+
+### SEO and robots
+
+Pass each page's `title` and `description` to the shared layout:
+
+```astro
+<Layout title="About us" description="Meet our team.">
+	<!-- Page content -->
+</Layout>
+```
+
+- Edit `src/components/SEO.astro` for the title suffix, Twitter creator, Open Graph image path/alt text, or additional metadata. The layout supplies the canonical URL and language alternates.
+- Add `noindex` to `<Layout>` to prevent indexing and omit language alternates. For additional pages, also update the sitemap `filter` in `astro.config.mjs`; only the bundled 404 pages are excluded automatically.
+- Edit the response text in `src/pages/robots.txt.ts` to change crawler directives, such as adding `Disallow: /private/`. Keep the generated `Sitemap` line. The endpoint builds into `dist/robots.txt`; do not also create `public/robots.txt`. Robots rules control crawling, not access or guaranteed removal from search results.
+
+After customization, run `pnpm build` and inspect `dist/`. Update the expected domain and metadata in `tests/seo.test.ts` and `tests/fixtures/seo-tags.json` to match your site before running `pnpm test`.
 
 ## Deployment
 
